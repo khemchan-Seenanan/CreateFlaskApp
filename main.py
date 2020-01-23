@@ -2,6 +2,7 @@ import argparse
 import os
 import subprocess
 import code
+import platform
  
 
 def banner():
@@ -84,6 +85,14 @@ def main():
     arguments = getArgs()
     # Create folder that houses the project
     mkdir(arguments.name)
+
+    plt = platform.system()
+    if(plt == "Linux"):
+        try:
+            execute_command("sudo apt-get install python3-venv")
+        except Exception:
+            print("Failed to install Venv!!!")
+            exit()
     
     #creat the a virtual environment
     create_virtual_environment(arguments.name)
