@@ -20,6 +20,7 @@ def banner():
 def execute_command(cmd):
     os.system(cmd)
 
+#function to get all the arguments the user specifies
 def getArgs():
     parser = argparse.ArgumentParser(description='Create a flask project.')
     parser.add_argument('name',metavar='name_of_project' ,type=str , help='name of the project')
@@ -27,6 +28,7 @@ def getArgs():
     return args
 
 
+#function for making a directory 
 def mkdir(name):
     try:
         os.mkdir(name)
@@ -37,6 +39,7 @@ def mkdir(name):
         print(f" \033[1;32;40m => Successfully created {name}!")
 
 
+#function for creating a virtual environment
 def create_virtual_environment(name):
     try:
         execute_command(f"python3 -m venv {name}/venv")
@@ -46,18 +49,21 @@ def create_virtual_environment(name):
     else:
         print(" \033[1;32;40m => Virtual Environment created successfully!!!")
 
+#function for making a file
 def touch(name, code):
     f = open(name, "w+")
     f.write(code)
     f.close()
 
+#function that upgrades pip
 def upgrade_pip(name):
     print("")
     print(" \033[1;35;40m ==== UPGRADING PIP ====\n")
     execute_command(f"{name}/venv/bin/pip install pip --upgrade")
     print("")
     print(" \033[1;32;40m **** Successfully upgraded PIP ****\n")
-    
+
+#function that installs flask  
 def install_flask(name):
     print("")
     print(" \033[1;35;40m ==== INSTALLING FLASK ====\n")
@@ -68,7 +74,8 @@ def install_flask(name):
 
 
 
-        
+
+#main routine  
 def main():
     banner()
     

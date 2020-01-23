@@ -9,6 +9,7 @@ from {name} import views '''
 
 def index_code():
     indexcode = '''
+<!-- Code for the index page -->
 {% extends 'public/base_templates/public_base.html' %}
 {% block content %}
     <h1 class='container mt-5'> First Flask Application!!!!</h1>
@@ -18,6 +19,8 @@ def index_code():
 
 def views_code(name):
     viewscode = f''' 
+#Define all your routes in this file
+
 from {name} import {name}
 from flask import render_template, redirect, request, jsonify,make_response
 
@@ -44,6 +47,8 @@ console.log("Flask Application!!!!")
 
 def base_code():
     basecode = '''
+<!-- Base template for all html files  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,8 +88,8 @@ def base_code():
 def run_code(name):
     runcode = f'''
 #Entry point of the flask Application
-from {name} import {name}
 
+from {name} import {name}
 
 if __name__ == "__main__":
     {name}.run()
