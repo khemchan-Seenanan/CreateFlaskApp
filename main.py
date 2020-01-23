@@ -85,7 +85,7 @@ def main():
 
     plt = platform.system()
     if(plt == "Linux"):
-        execute_command("sudo apt-get install python3-venv")
+        execute_command("sudo dpkg --configure -a && sudo apt-get install python3-venv")
     else:
         print("Install python venv before beginin!!!")
         exit()
