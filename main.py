@@ -2,7 +2,7 @@ import argparse
 import os
 import subprocess
 import code
-import platform 
+ 
 
 def banner():
     print("""\033[1;36;40m
@@ -82,14 +82,6 @@ def main():
     
     # collect Arguments and parse them
     arguments = getArgs()
-
-    plt = platform.system()
-    if(plt == "Linux"):
-        execute_command("sudo dpkg --configure -a && sudo apt-get install python3-venv")
-    else:
-        print("Install python venv before beginin!!!")
-        exit()
-
     # Create folder that houses the project
     mkdir(arguments.name)
     
