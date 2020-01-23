@@ -86,7 +86,10 @@ def main():
     plt = platform.system()
     if(plt == "Linux"):
         execute_command("apt-get install python3-venv")
-        
+    else:
+        print("Install python venv before beginin!!!")
+        exit()
+
     # Create folder that houses the project
     mkdir(arguments.name)
     
