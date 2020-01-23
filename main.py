@@ -46,7 +46,7 @@ def create_virtual_environment(name):
     try:
         execute_command(f"python3 -m venv {name}/venv")
 
-    except OSError:
+    except Exception:
         plt = platform.system()
         if(plt == "Linux"):
             try:
