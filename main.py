@@ -43,22 +43,26 @@ def mkdir(name):
 
 #function for creating a virtual environment
 def create_virtual_environment(name):
-    try:
-        execute_command(f"python3 -m venv {name}/venv")
-
-    except Exception:
-        plt = platform.system()
-        if(plt == "Linux"):
-            try:
-                execute_command("sudo apt-get install python3-venv")
-                execute_command(f"python3 -m venv {name}/venv")
-            except Exception:
-              print("Failed to install Venv o linux!!!")
-              exit()
-        else:
+    plt = platform.system()
+    if(plt == "Darwin"):
+        try:
+            execute_command(f"python3 -m venv {name}/venv")
+        except OSError:
             print(" \033[1;31;40m => ERROR: Failed to create virtual environment!!!")
-    else:
-        print(" \033[1;32;40m => Virtual Environment created successfully!!!")
+            exit()
+        else:
+            print(" \033[1;32;40m => Virtual Environment created successfully!!!")
+    elif(plt == "Linux"):
+        try:
+            execute_command("sudo apt-get install python3-venv")
+            execute_command(f"python3 -m venv {name}/venv")
+        except Exception:
+            print("Failed to install Venv o linux!!!")
+            exit()
+        else:
+            print(" \033[1;32;40m => Virtual Environment created successfully!!!")
+            
+        
 
 #function for making a file
 def touch(name, code):
