@@ -47,7 +47,16 @@ def create_virtual_environment(name):
         execute_command(f"python3 -m venv {name}/venv")
 
     except OSError:
-        print(" \033[1;31;40m => ERROR: Failed to create virtual environment!!!")
+        plt = platform.system()
+        if(plt == "Linux"):
+            try:
+                execute_command("sudo apt-get install python3-venv")
+                execute_command(f"python3 -m venv {name}/venv")
+            except Exception:
+              print("Failed to install Venv o linux!!!")
+              exit()
+        else:
+            print(" \033[1;31;40m => ERROR: Failed to create virtual environment!!!")
     else:
         print(" \033[1;32;40m => Virtual Environment created successfully!!!")
 
@@ -85,14 +94,6 @@ def main():
     arguments = getArgs()
     # Create folder that houses the project
     mkdir(arguments.name)
-
-    plt = platform.system()
-    if(plt == "Linux"):
-        try:
-            execute_command("sudo apt-get install python3-venv")
-        except Exception:
-            print("Failed to install Venv!!!")
-            exit()
     
     #creat the a virtual environment
     create_virtual_environment(arguments.name)
