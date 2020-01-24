@@ -1,9 +1,17 @@
+#!/usr/bin/env python3
 import os 
 
 def install():
-    os.system("mkdir -p ~/bin_dir")
-    os.system("cp createflaskapp code.py ~/bin_dir")
-    os.system("export PATH=$PATH':$HOME/bin_dir'")
+    try:
+        os.system("mkdir -p ~/bin_dir")
+        os.system("cp createflaskapp code.py ~/bin_dir")
+    except OSError:
+        print(" \033[1;31;40m Couldn't INSTALL the createflaskapp command!!!!!")
+    else:
+        print(f" \033[2;33;40m ---- RUN THE FOLLOWING COMMAND!! ---- \n")
+        print(" \033[1;32;40m createflaskapp command installed SUCCESSFULLY!!")
+        print(" \033[1;33;40m RUN \033[1;36;40m echo 'export PATH=$PATH\":$HOME/bin_dir\"' >> ~/.bash_profile && source ~/.bash_profile \033[1;33;40m TO complete the installation\n")
+        
     
-if(__name__ == "__main__"):
+if __name__ == "__main__":
     install()
