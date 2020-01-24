@@ -1,19 +1,19 @@
 # CreateFlaskApp
-Python script that generates a skeleton for a flask application
+This project is a command line tool, built in python, that will generate a basic skeleton for a flask application
 
-# Requirements
-## Linux & MacOs
+# Requirements (Linux & MacOs)
 **Ensure that python 3.3 or later is installed on your system**
 
 ## To use this script run the following
 
 ```bash
 git clone https://github.com/khemchan-Seenanan/CreateFlaskApp.git
-```
-```bash
-cd CreateFlaskApp
-```
-```bash
-python3 main.py <name of your application>
+
+./install.py
+
+echo 'export PATH=$PATH\":$HOME/bin_dir\"' >> ~/.bash_profile && source ~/.bash_profile 
+
+createflaskapp <name_of_application>
+
 ```
 
