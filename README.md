@@ -11,9 +11,11 @@ git clone https://github.com/khemchan-Seenanan/CreateFlaskApp.git
 
 ./install.py
 
-echo 'export PATH=$PATH\":$HOME/bin_dir\"' >> ~/.bash_profile && source ~/.bash_profile 
+RUN THE COMMAND GENERATED
 
 createflaskapp <name_of_application>
+
+RUN THE COMMAND GENERATED
 
 ```
 
