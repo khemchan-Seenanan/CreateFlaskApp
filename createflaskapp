@@ -123,7 +123,7 @@ def main():
 
     mkdir(f"{arguments.name}/{arguments.name}/templates")
     mkdir(f"{arguments.name}/{arguments.name}/templates/public")
-    touch(f"{arguments.name}/{arguments.name}/templates/public/index.html", code.index_code())
+    touch(f"{arguments.name}/{arguments.name}/templates/public/index.html", code.index_code(arguments.name))
     mkdir(f"{arguments.name}/{arguments.name}/templates/public/base_templates")
     touch(f"{arguments.name}/{arguments.name}/templates/public/base_templates/public_base.html", code.base_code())
 

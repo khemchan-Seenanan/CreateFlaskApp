@@ -7,12 +7,12 @@ from {name} import views '''
     
     return initcode
 
-def index_code():
+def index_code(name):
     indexcode = '''
 <!-- Code for the index page -->
 {% extends 'public/base_templates/public_base.html' %}
 {% block content %}
-    <h1 class='container mt-5'> First Flask Application!!!!</h1>
+    <h1 class='container mt-5' style="text-align:center; style="font-family: 'Oleo Script';">Name of app: {name}</h1>
 {% endblock content %}
     '''
     return indexcode
@@ -61,7 +61,7 @@ def base_code():
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script&display=swap" rel="stylesheet">
 </head>
 <body style="background-color: #32A9DE;">
-    <h1 style="font-family: 'Oleo Script', cursive; text-align:center;" >Create Flask App</h1>
+    <h1 class="mt-5"  style="font-family: 'Oleo Script', cursive; text-align:center;" >Create Flask App</h1>
    
     
     {% block content %}{% endblock content %}  
