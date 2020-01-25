@@ -7,13 +7,13 @@ from {name} import views '''
     
     return initcode
 
-def index_code():
-    indexcode = '''
+def index_code(name):
+    indexcode = f'''
 <!-- Code for the index page -->
-{% extends 'public/base_templates/public_base.html' %}
-{% block content %}
-    <h1 class='container mt-5' style="text-align:center; style="font-family: 'Oleo Script';">Welcome to your app!!!!</h1>
-{% endblock content %}
+{{% extends 'public/base_templates/public_base.html' %}}
+{{% block content %}}
+    <h1 class='container mt-5' style="text-align:center;font-family: 'Oleo Script',cursive ;">Name of App: {name}</h1>
+{{% endblock content %}}
     '''
     return indexcode
 
