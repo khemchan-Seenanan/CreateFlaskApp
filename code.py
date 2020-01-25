@@ -8,7 +8,7 @@ from {name} import views '''
     return initcode
 
 def index_code(name):
-    indexcode = '''
+    indexcode = f'''
 <!-- Code for the index page -->
 {% extends 'public/base_templates/public_base.html' %}
 {% block content %}
