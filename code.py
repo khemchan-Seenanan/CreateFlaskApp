@@ -2,6 +2,7 @@ def init_code(name):
     initcode = f'''
 from flask import Flask
 {name} = Flask(__name__)
+{name}.config.from_object("config.DevelopmentConfig")
 
 from {name} import views '''
     
@@ -86,4 +87,23 @@ if __name__ == "__main__":
     
     '''
     return runcode
+
+def config_file():
+    configfile = '''
+class config(object):
+    DEBUG = False
+    TESTING = False
+
+class ProductionConfig(config):
+    pass;
+
+class DevelopmentConfig(config):
+    DEBUG = True
+ 
+
+class TestingConfig(config):
+    TESTING = True
+    '''
+
+    return configfile
 

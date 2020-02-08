@@ -105,6 +105,7 @@ def main():
 
     #flask app entry point
     touch(f"{arguments.name}/run.py", code.run_code(arguments.name))
+    touch(f"{arguments.name}/config.py", code.config_file())
 
     #create folder that houses the project files
     mkdir(f"{arguments.name}/{arguments.name}")
@@ -132,7 +133,7 @@ def main():
 
     print("")
     print(f" \033[2;33;40m ---- RUN THE FOLLOWING COMMAND!! ---- \n")
-    print(f" \033[1;36;40m source {arguments.name}/venv/bin/activate && export FLASK_APP={arguments.name}/run.py && export FLASK_ENV=development")
+    print(f" \033[1;36;40m source {arguments.name}/venv/bin/activate && export FLASK_APP={arguments.name}/run.py")
     print("")
     print(" \033[1;33;40m RUN \033[1;36;40m flask run \033[1;33;40m TO START THE SERVER\n")
     
