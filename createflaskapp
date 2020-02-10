@@ -133,7 +133,7 @@ def main():
 
     print("")
     print(f" \033[2;33;40m ---- RUN THE FOLLOWING COMMAND!! ---- \n")
-    print(f" \033[1;36;40m source {arguments.name}/venv/bin/activate && export FLASK_APP={arguments.name}/run.py")
+    print(f" \033[1;36;40m source {arguments.name}/venv/bin/activate && export FLASK_APP={arguments.name}/run.py && export FLASK_ENV=development")
     print("")
     print(" \033[1;33;40m RUN \033[1;36;40m flask run \033[1;33;40m TO START THE SERVER\n")
     
